@@ -1,0 +1,150 @@
+@import "./CategoryPage.css";
+
+/* Main Billing Page */
+.billing-page{
+    min-height:100vh;
+}
+
+/* Form Card */
+.billing-page .glass-card{
+    width:85%;
+    max-width:1300px;
+    margin:auto;
+}
+.page-title{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+/* Cart Table */
+.billing-page .table-card{
+    width:100%;
+}
+
+/* Labels */
+.billing-page label{
+    color:#111827;
+    font-weight:600;
+}
+
+/* React Select */
+.billing-page .css-13cymwt-control{
+    min-height:55px;
+    border-radius:15px;
+    border:1px solid #dbeafe;
+}
+
+.billing-page .css-t3ipsp-control{
+    min-height:55px;
+    border-radius:15px;
+    border:1px solid #3b82f6;
+    box-shadow:0 0 12px rgba(59,130,246,.25);
+}
+
+/* Quantity Box */
+.billing-page .form-control{
+    height:55px;
+    border-radius:15px;
+    border:1px solid #dbeafe;
+}
+
+.billing-page .form-control:focus{
+    border-color:#3b82f6;
+    box-shadow:0 0 12px rgba(59,130,246,.25);
+}
+
+/* Add Item */
+.add-item-btn{
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #06b6d4
+    );
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:12px 25px;
+    font-weight:600;
+}
+
+.add-item-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* Generate Bill */
+.generate-btn{
+    background:linear-gradient(
+        90deg,
+        #22c55e,
+        #16a34a
+    );
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:12px 25px;
+    font-weight:600;
+}
+
+.generate-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* Remove */
+.remove-btn{
+    background:linear-gradient(
+        90deg,
+        #ef4444,
+        #dc2626
+    );
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:8px 16px;
+}
+
+/* Total */
+.bill-total{
+    text-align:right;
+    color:#16a34a;
+    font-size:28px;
+    font-weight:700;
+    margin-top:20px;
+}
+
+/* Table */
+.billing-page .custom-table{
+    color:#111827;
+}
+
+.billing-page .custom-table th{
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #06b6d4
+    );
+    color:white;
+}
+
+.billing-page .custom-table td{
+    color:#111827;
+    vertical-align:middle;
+}
+
+/* Responsive */
+@media(max-width:992px){
+
+    .billing-page .glass-card{
+        width:95%;
+    }
+
+    .billing-page .table-card{
+        width:95%;
+    }
+}

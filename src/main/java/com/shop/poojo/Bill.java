@@ -18,5 +18,5 @@ private Double totalAmount;
 @OneToMany(cascade=CascadeType.ALL)
 @JoinColumn(name="bill_id")
 private List<BillItem> items;
-	
+
 }

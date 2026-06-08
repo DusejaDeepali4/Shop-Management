@@ -9,7 +9,6 @@ import com.shop.dao.BillDao;
 import com.shop.dao.ProductDao;
 import com.shop.dto.BillItemDTO;
 import com.shop.dto.BillRequestDTO;
-import com.shop.exception.InsufficientStockException;
 import com.shop.exception.ResourceNotFoundException;
 import com.shop.poojo.Bill;
 import com.shop.poojo.BillItem;
@@ -44,13 +43,6 @@ public class BillServiceImpl implements BillService{
                                     new ResourceNotFoundException(
                                             "Product not found"));
 
-            if (product.getStock()
-                    < dto.getQuantity()) {
-
-                throw new InsufficientStockException(
-                        "Insufficient stock for "
-                                + product.getProductName());
-            }
 
             BillItem item = new BillItem();
 
@@ -71,10 +63,6 @@ public class BillServiceImpl implements BillService{
             item.setAmount(amount);
 
             total += amount;
-
-            product.setStock(
-                    product.getStock()
-                            - dto.getQuantity());
 
             pdao.save(product);
 

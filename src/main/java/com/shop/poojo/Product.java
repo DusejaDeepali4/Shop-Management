@@ -1,4 +1,6 @@
 package com.shop.poojo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.*;
 @Entity
@@ -16,7 +18,6 @@ private String productName;
 private String brand;
 private String size;
 private Double price;
-private Integer stock;
 private String unit;
 @ManyToOne
 @JoinColumn(name="category_id")

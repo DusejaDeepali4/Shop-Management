@@ -1,0 +1,26 @@
+.invoice-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 12px;
+  text-align: center;
+}
+
+@media print {
+
+  .btn {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+}

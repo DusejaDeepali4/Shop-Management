@@ -1,13 +1,20 @@
-import { FaBoxes, FaLayerGroup, FaFileInvoiceDollar } from "react-icons/fa";
+import {
+  FaBoxes,
+  FaLayerGroup,
+  FaFileInvoiceDollar,
+  FaUsers
+} from "react-icons/fa";
+
 import { MdInventory } from "react-icons/md";
+
 import "./Dashboard.css";
 
 function Dashboard({ setPage }) {
-
   return (
     <div className="dashboard-container">
 
-      <div className="overlay"></div>
+      {/* Remove overlay temporarily if clicks are not working */}
+      {/* <div className="overlay"></div> */}
 
       <div className="dashboard-content">
 
@@ -21,7 +28,7 @@ function Dashboard({ setPage }) {
 
         <div className="cards">
 
-          {/* Category Card */}
+          {/* Categories */}
           <div
             className="card-box"
             onClick={() => setPage("category")}
@@ -31,7 +38,7 @@ function Dashboard({ setPage }) {
             <p>Manage all hardware categories</p>
           </div>
 
-          {/* Product Card */}
+          {/* Products */}
           <div
             className="card-box"
             onClick={() => setPage("product")}
@@ -41,17 +48,8 @@ function Dashboard({ setPage }) {
             <p>Add and track shop products</p>
           </div>
 
-          {/* Inventory Card */}
-          <div
-            className="card-box"
-            onClick={() => setPage("product")}
-          >
-            <MdInventory className="icon" />
-            <h3>Inventory</h3>
-            <p>Monitor stock availability</p>
-          </div>
 
-          {/* Billing Card */}
+          {/* Billing */}
           <div
             className="card-box"
             onClick={() => setPage("bill")}
@@ -61,6 +59,8 @@ function Dashboard({ setPage }) {
             <p>Generate customer bills instantly</p>
           </div>
 
+         
+
         </div>
 
         <div className="welcome-box">
@@ -68,8 +68,8 @@ function Dashboard({ setPage }) {
           <h2>Welcome Admin 👋</h2>
 
           <p>
-            Manage categories, products, inventory and customer billing
-            from one powerful dashboard.
+            Manage categories, products, inventory,
+            customers and billing from one dashboard.
           </p>
 
         </div>

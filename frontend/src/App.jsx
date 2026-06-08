@@ -1,56 +1,97 @@
 import { useState } from "react";
+import "./App.css";
+
 import Dashboard from "./components/Dashboard";
 import CategoryPage from "./components/CategoryPage";
 import ProductPage from "./components/ProductPage";
 import BillingPage from "./components/BillingPage";
+import InvoicePage from "./components/InvoicePage";
 
 function App() {
 
   const [page, setPage] = useState("dashboard");
 
+  const [billData, setBillData] = useState(null);
+  const [billItems, setBillItems] = useState([]);
+
   return (
-    <div className="container mt-4">
+    <div className="app-container">
 
-      <h1 className="text-center">
-        Hardware Shop Billing System
-      </h1>
+      {page !== "dashboard" && page !== "invoice" && (
 
-      <div className="mb-3">
+        <div className="top-navbar">
 
-        <button
-          className="btn btn-primary me-2"
-          onClick={() => setPage("dashboard")}
-        >
-          Dashboard
-        </button>
+          <div className="logo-section">
+            <h2>🔩 Anand Krishna Enterprises</h2>
+          </div>
 
-        <button
-          className="btn btn-success me-2"
-          onClick={() => setPage("category")}
-        >
-          Categories
-        </button>
+          <div className="nav-buttons">
 
-        <button
-          className="btn btn-warning me-2"
-          onClick={() => setPage("product")}
-        >
-          Products
-        </button>
+            <button
+              className={page === "dashboard" ? "nav-btn active" : "nav-btn"}
+              onClick={() => setPage("dashboard")}
+            >
+              Dashboard
+            </button>
 
-        <button
-          className="btn btn-danger"
-          onClick={() => setPage("bill")}
-        >
-          Billing
-        </button>
+            <button
+              className={page === "category" ? "nav-btn active" : "nav-btn"}
+              onClick={() => setPage("category")}
+            >
+              Categories
+            </button>
+
+            <button
+              className={page === "product" ? "nav-btn active" : "nav-btn"}
+              onClick={() => setPage("product")}
+            >
+              Products
+            </button>
+
+            <button
+              className={page === "bill" ? "nav-btn active" : "nav-btn"}
+              onClick={() => setPage("bill")}
+            >
+              Billing
+            </button>
+
+          </div>
+
+        </div>
+
+      )}
+
+      <div className="page-wrapper">
+
+        {page === "dashboard" &&
+          <Dashboard setPage={setPage} />
+        }
+
+        {page === "category" &&
+          <CategoryPage />
+        }
+
+        {page === "product" &&
+          <ProductPage />
+        }
+
+        {page === "bill" &&
+          <BillingPage
+            setPage={setPage}
+            setBillData={setBillData}
+            setBillItems={setBillItems}
+          />
+        }
+
+        {page === "invoice" &&
+          <InvoicePage
+            bill={billData}
+            items={billItems}
+            setPage={setPage}
+          />
+        }
 
       </div>
-
-      {page === "dashboard" && <Dashboard />}
-      {page === "category" && <CategoryPage />}
-      {page === "product" && <ProductPage />}
-      {page === "bill" && <BillingPage />}
 
     </div>
   );

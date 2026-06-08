@@ -1,6 +1,7 @@
 package com.shop.service;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,13 +32,15 @@ public class ProductServiceImpl implements ProductService{
                                         "Category not found"));
 
         Product product = new Product();
-
+        String normalizedBrand =
+                dto.getBrand()
+                       .trim()
+                       .toUpperCase(Locale.ROOT);
         product.setProductName(dto.getProductName());
-        product.setBrand(dto.getBrand());
+        product.setBrand(normalizedBrand);
         product.setSize(dto.getSize());
         product.setUnit(dto.getUnit());
         product.setPrice(dto.getPrice());
-        product.setStock(dto.getStock());
         product.setCategory(category);
 
         return pdao.save(product);
@@ -71,7 +74,6 @@ public class ProductServiceImpl implements ProductService{
         product.setSize(dto.getSize());
         product.setUnit(dto.getUnit());
         product.setPrice(dto.getPrice());
-        product.setStock(dto.getStock());
         product.setCategory(category);
 
         return pdao.save(product);

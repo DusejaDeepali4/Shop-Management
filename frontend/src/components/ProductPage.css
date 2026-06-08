@@ -1,0 +1,35 @@
+
+@import "./CategoryPage.css";
+
+.product-page .form-card{
+    width:75% !important;
+    margin:auto;
+}
+
+.product-page .table-card{
+    width:85% !important;
+    margin:30px auto;
+}
+.product-page{
+    min-height:100vh;
+}
+
+.product-page .glass-card{
+    margin-bottom:30px;
+}
+
+.product-page .table-header h3{
+    color:white;
+}
+
+.product-page .custom-table{
+    color:white;
+}
+
+.product-page .custom-table td{
+    vertical-align:middle;
+}
+
+.product-page .custom-input{
+    height:60px;
+}

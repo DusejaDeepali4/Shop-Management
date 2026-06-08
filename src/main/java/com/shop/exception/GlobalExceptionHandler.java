@@ -16,15 +16,6 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(InsufficientStockException.class)
-    public ResponseEntity<String> handleStock(
-            InsufficientStockException ex) {
-
-        return new ResponseEntity<>(
-                ex.getMessage(),
-                HttpStatus.BAD_REQUEST);
-    }
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(
             Exception ex) {
